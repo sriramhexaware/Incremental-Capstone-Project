@@ -1,1 +1,1 @@
-# Incremental-Capstone-Project
+# Incremental Capstone Project - Travel Mate
