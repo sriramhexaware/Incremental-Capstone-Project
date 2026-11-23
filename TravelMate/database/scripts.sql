@@ -1,0 +1,66 @@
+--use travelmatedb;
+
+--SELECT * FROM Customer;
+--SELECT * FROM Flight;
+--SELECT * FROM Hotel;
+--SELECT * FROM Tour;
+--SELECT * FROM Booking;
+--SELECT * FROM Payment;
+
+--exec sp_help 'customer';
+--exec sp_help 'flight';
+--exec sp_help 'tour';
+--exec sp_help 'hotel';
+--exec sp_help 'booking';
+--exec sp_help 'payment';
+
+--CREATE TABLE Customer (
+--    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+--    FirstName NVARCHAR(50),
+--    LastName NVARCHAR(50),
+--    Email NVARCHAR(100) UNIQUE,
+--    PassportNumber NVARCHAR(30)
+--)
+--CREATE TABLE Flight (
+--    FlightID INT IDENTITY(1,1) PRIMARY KEY,
+--    FlightNumber NVARCHAR(20),
+--    Origin NVARCHAR(50),
+--    Destination NVARCHAR(50),
+--    DepartureTime DATETIME2,
+--    SeatsAvailable INT CHECK (SeatsAvailable >= 0),
+--    Price DECIMAL(10,2)
+--);
+--CREATE TABLE Hotel (
+--    HotelID INT IDENTITY(1,1) PRIMARY KEY,
+--    HotelName NVARCHAR(100),
+--    City NVARCHAR(50),
+--    RoomsAvailable INT CHECK (RoomsAvailable >= 0),
+--    PricePerNight DECIMAL(10,2)
+--);
+--CREATE TABLE Tour (
+--    TourID INT IDENTITY(1,1) PRIMARY KEY,
+--    TourName NVARCHAR(100),
+--    City NVARCHAR(50),
+--    SlotsAvailable INT CHECK (SlotsAvailable >= 0),
+--    Price DECIMAL(10,2)
+--);
+--CREATE TABLE Booking (
+--    BookingID INT IDENTITY(1,1) PRIMARY KEY,
+--    CustomerID INT,
+--    BookingDate DATE,
+--    BookingType NVARCHAR(20),
+--    ReferenceID INT,
+--    Status NVARCHAR(20) DEFAULT 'Confirmed',
+--    TotalAmount DECIMAL(10,2),
+--    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+--);
+--CREATE TABLE Payment (
+--    PaymentID INT IDENTITY(1,1) PRIMARY KEY,
+--    BookingID INT,
+--    AmountPaid DECIMAL(10,2),
+--    PaymentDate DATE,
+--    Method NVARCHAR(30),
+--    FOREIGN KEY (BookingID) REFERENCES Booking(BookingID)
+--);
+
+
